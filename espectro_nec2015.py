@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 # ESPECTRO DE DISEÑO
 
@@ -35,6 +36,13 @@ plt.ylabel('a(m/s^2)')
 plt.title('Espectro de diseño de acuerdo a la norma NEC-SE-2015')
 
 data = np.column_stack((t, s))
+
+# Define el directorio donde quieres guardar el archivo
+directory = '/ruta/al/directorio/deseado'
+
+# Define la ruta completa del archivo
+file_path = os.path.join(directory, 'espectro.txt')
+
 
 np.savetxt('espectro.txt', data, fmt='%.6f', delimiter='\t')
 
